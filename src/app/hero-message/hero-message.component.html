@@ -1,0 +1,6 @@
+<h2>{{heroMessageService.title}}</h2>
+<button (click)="onClear()">clear</button>
+<div *ngFor="let msg of message">
+    {{msg}}
+</div>
+<button (click)="onChangeMessage()">change title</button>

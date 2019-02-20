@@ -1,0 +1,9 @@
+<div class="pickoption" [ngSwitch]="option.value">
+  <div *ngSwitchCase="'sad'">
+      sad
+    </div>
+    <ng-content *ngSwitchCase="'happy'"></ng-content>
+    <p>type a background color and a color for the below sentence</p>
+    <input #input [(ngModel)]="value" type="text" (keyup.enter)="bgclr=value" (blur)="bgclr=value" placeholder="type color enter|blur">
+    <span class="bagespan" [style.background-color]="bgclr?.split(' ').slice(-1)" [style.color]="bgclr?.split(' ').slice(-2,-1)">{{input.value.split(' ').slice(0,-2).join(' ')}}</span>
+</div>
