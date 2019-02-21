@@ -12,7 +12,8 @@ import { HeroService } from '../service/hero.service';
 export class HeroDetailComponent implements OnInit {
   hero: Hero={
     id: 0,
-    name: ''
+    name: '',
+    img: ''
   };
   constructor(
     private route: ActivatedRoute,

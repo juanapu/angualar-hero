@@ -7,7 +7,9 @@
 		   <div class="list-group">
 				<a class="list-group-item mr-3" *ngFor="let hero of heroes;trackBy: trackByHeroes" routerLink="/detail/{{hero.id}}" [ngClass]="hero.id%2===0?'bg-light text-dark':'bg-secondary text-white'">
 						<span class="badge">{{hero.id}}</span>{{hero.name}}
-						<img [src]="hero.img" class="mr-3" alt="hero img">
+						<div class="imgwrap">
+							<img [src]="hero.img" class="mr-3 profile" alt="hero img">
+						</div>
 				</a>
 			</div>
 	   </div>

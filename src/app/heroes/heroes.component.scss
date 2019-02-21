@@ -8,4 +8,21 @@
         background-color: #065596;
         color: #fff;
     }
+    .imgwrap{
+    	width: 2rem;
+    	position: absolute;
+    	right: 1rem;
+    	top: 0rem;
+    	height: 100%;
+    	display: flex;
+		justify-content: center;
+		align-items: center;
+
+	    img.profile{
+		    border-radius: .5rem;
+		    width: 2rem;
+	    }
+
+
+    }
 }

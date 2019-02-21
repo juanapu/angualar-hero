@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, OnDestroy, AfterContentChecked,
+AfterViewInit, AfterViewChecked } from '@angular/core';
 
 import { Hero } from '../class/hero';
 import { HeroService } from '../service/hero.service';
@@ -15,7 +16,8 @@ export class HeroesComponent implements OnInit {
 
    hero: Hero = {
    	 id: 1,
-   	 name: 'windostorm'
+   	 name: 'windostorm',
+     img: ''
    };
 
    option: Object = {
@@ -36,12 +38,44 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
+    console.log('&&&&& ng init &&&&&')
     this.heroService.getHeroes()
       .subscribe(val=>{ 
         this.heroes=val;
         console.log(this.heroes);
       });
   }
+
+  ngOnChanges() {
+    console.log('---- test ngOnChanges ----');
+  }
+
+  ngDoCheck() {
+    console.log('*** ngDoCheck *****')
+  }
+
+  ngAfterContentInit(){
+    console.log(' ----- ngAfterContentInit ----')
+  }
+
+  ngAfterContentChecked(){
+    console.log('**** ngAfterContentChecked ***')
+  }
+
+  ngAfterViewInit(){
+    console.log(' ---- ngAfterViewInit -----')
+  }
+
+  ngAfterViewChecked(){
+    console.log('*** ngAfterViewChecked *****')
+  }
+
+  ngOnDestroy() {
+    console.log('----- ngOnDestroy -----')
+  }
+
+
+
 
   onSelect(slc: Hero){
     this.selectedHero=slc;
