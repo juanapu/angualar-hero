@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+            <div class="clockwrap">
+              <button class="btn btn-info" (click)="timer.stop()" data-toggle="tooltip" data-placement="top" title="local variable control">stop</button>
+              <div class="clock">
+                <app-timer #timer></app-timer>
+              </div> 
+              <button class="btn btn-info" (click)="timer.count()" data-toggle="tooltip" data-placement="top" title="local variable control">count</button>
+            </div>
+            <div class="buttonwrap">
+                <button class="btn btn-info" (click)="onStop()" data-toggle="tooltip" data-placement="top" title="viewChild control">stop</button>
+                <button class="btn btn-info" (click)="onCount()" data-toggle="tooltip" data-placement="top" title="viewChild control">count</button>
+              </div>
+            <div class="card-body">
+              <h5 class="card-title">Timmer</h5>
+              <p class="card-text">Parent interacts with child via <strong>localvariable</strong><strong> viewChild</strong> </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+            <div class="clockwrap2" [style.background-color]="color">
+              <div class="clock">
+                <app-colorpicker></app-colorpicker>
+              </div> 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Timmer</h5>
+              <p class="card-text">Parent interacts with child via <strong>service</strong> </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+</div>

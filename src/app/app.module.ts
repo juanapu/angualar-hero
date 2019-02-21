@@ -20,6 +20,16 @@ import { ButtonComponent } from './publicCom/button/button.component';
 import { ChildComponent } from './heroes/child/child.component';
 import { TwowaybindchildComponent } from './heroes/twowaybindchild/twowaybindchild.component';
 import { PickoptionComComponent } from './publicCom/pickoption-com/pickoption-com.component';
+import { TimerComponent } from './publicCom/timer/timer.component';
+import { FunComponent } from './fun/fun.component';
+import { ColorpickerComponent } from './publicCom/colorpicker/colorpicker.component';
+
+// import { XpGhostModule } from '@hyland/experience';
+import { TranslateModule } from '@ngx-translate/core';
+import { XpTranslateModule } from '@hyland/experience';
+
+import { XpViewerModule } from '@hyland/experience';
+import { ExperienceComponent } from './experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +41,11 @@ import { PickoptionComComponent } from './publicCom/pickoption-com/pickoption-co
     ButtonComponent,
     ChildComponent,
     TwowaybindchildComponent,
-    PickoptionComComponent
+    PickoptionComComponent,
+    FunComponent,
+    TimerComponent,
+    ColorpickerComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +54,10 @@ import { PickoptionComComponent } from './publicCom/pickoption-com/pickoption-co
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
+    XpViewerModule,
+    TranslateModule,
+    XpTranslateModule,
+    // XpGhostModule,
         // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.

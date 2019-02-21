@@ -1,0 +1,33 @@
+div{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    color: #ffffff;
+    // background-image: linear-gradient(#ef8322 66%, yellow 93%);
+    position: relative;
+    .circle1,.circle2,.circle3,.circle4 {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px; 
+        background-color: red;
+        position: absolute;
+        top: 8px;
+        left: 37px;
+        /* width and height can be anything, as long as they're equal */
+    }
+    .circle2{
+        background-color: yellow;
+        top: 57px;
+        left: 33px;
+    }
+    .circle3{
+        background-color: #007bff;
+        top: 31px;
+        left: 64px;
+    }
+    .circle4{
+        background-color: #00ff92;
+        top: 31px;
+        left: 9px;
+    }
+}

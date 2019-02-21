@@ -1,7 +1,20 @@
-
 <h1>{{title}}</h1>
-<nav>
-  <a class="col-sm-4" routerLink="/dashboard">Dashboard</a>
-  <a class="col-sm-4" routerLink="/heroes">Heroes</a>
-</nav>
-<router-outlet></router-outlet>
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/heroes">Heroes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/fun">Fun</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/experience">Experience</a>
+    </li>
+</ul>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
+
