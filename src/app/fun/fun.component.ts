@@ -33,10 +33,10 @@ import {
             style({
                 borderRadius: '50%'
             }),
-            animate(5000,style({
+            animate(1000,style({
               borderRadius: '.5rem'
             })),
-            animate(5000) 
+            animate(1000) 
         ]),
         // transition('clr1 <=> clr2',[
         //     animate(1000,style({
@@ -46,14 +46,70 @@ import {
         transition('mdClr <=> *',[
             animate(1000)
           ])
+      ]),
+      trigger('wildCard',[
+        state('open', style({
+            // height: '200px',
+            opacity: 1,
+            backgroundColor: 'yellow'
+          })),
+          state('closed', style({
+            // height: '100px',
+            opacity: 0.5,
+            backgroundColor: 'green'
+          })),
+          transition('* => closed', [
+            animate('3s')
+          ]),
+          transition('* => open', [
+            style({
+                transform: 'scale(1)'
+            }),
+            animate(300,style({
+                transform: 'scale(.5)'
+            })), 
+            animate(300,style({
+                transform: 'scale(1)'
+            })), 
+            animate(100,style({
+                transform: 'scale(1.3)'
+            })), 
+            animate(500)
+          ]),
+      ]),
+      trigger('show',[
+          state('in',style({
+              backgroundColor: 'red'
+          })),
+          transition('void=>*',[
+            style({
+                backgroundColor: 'red',
+                transform: 'scale(0)'
+            }),
+            animate(1000,style({
+                backgroundColor: 'green',
+                transform: 'scale(1.5)'
+            })),
+            animate(500)
+          ]),
+          transition('*=>void',[
+            animate(1000,style({
+                backgroundColor: 'green',
+                transform: 'scale(0)'
+            }))
+          ])
       ])
   ],
   templateUrl: './fun.component.html',
   styleUrls: ['./fun.component.scss']
 })
 export class FunComponent implements OnInit {
+  
+  circles:(boolean)[] = [];
+  items:number[]=[];
 
   state = 'clr1';
+  wildCardState = 'closed';
 
   @ViewChild(TimerComponent)
   timer: TimerComponent;
@@ -64,6 +120,9 @@ export class FunComponent implements OnInit {
    }
 
   ngOnInit() {
+      for(let i =0;i<16;i++){
+        this.circles.push(false);
+      };
   }
 
   onStop(){
@@ -76,4 +135,17 @@ export class FunComponent implements OnInit {
     this.state = this.state==='clr1'?'clr2':'clr1';
   }
 
+  OnChangewildState(){
+      this.wildCardState = this.wildCardState==='open'?'closed':'open';
+  }
+
+  OnShow(index){
+    this.circles[index] = !this.circles[index];  
+  }
+  onAddItem(){
+      this.items.push(this.items.length);
+  }
+  onDelete(index){
+      this.items.splice(index,1);
+  }
 }

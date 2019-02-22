@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@hyland/dev-kit": "^1.6.0",
     "@hyland/experience": "^1.0.0-beta.21",
     "@hyland/minotaur": "0.0.1-beta.3",
     "@ng-bootstrap/ng-bootstrap": "^4.0.2",

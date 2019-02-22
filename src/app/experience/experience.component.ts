@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import { XpPlaceholderDatasource } from '@hyland/experience';
+import { XpDatasource, XpPlaceholderDatasource } from '@hyland/experience';
+import { HttpClient } from '@angular/common/http';
+import { MyDataSource } from './mydatasource';
+
 
 @Component({
   selector: 'app-experience',
@@ -7,12 +10,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experience.component.scss']
 })
 export class ExperienceComponent implements OnInit {
-  // myDatasource: XpPlaceholderDatasource; 
+  myDatasource: XpDatasource;
 
-  constructor() {
-    // this.myDatasource = new XpPlaceholderDatasource({
-    //   pageCount: 10,
-    // });
+  constructor(private http: HttpClient) {
+    this.myDatasource = new MyDataSource(this.http);
    }
 
   ngOnInit() {

@@ -15,7 +15,7 @@
       },
       "architect": {
         "build": {
-          "builder": "@hyland/dev-kit:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/hero-app",
             "index": "src/index.html",
@@ -33,9 +33,7 @@
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ],
-            "i18nModules": ["@hyland/experience"],
-            "i18nPaths": ["src/i18n"]
+            ]
           },
           "configurations": {
             "production": {
@@ -65,7 +63,7 @@
           }
         },
         "serve": {
-          "builder": "@hyland/dev-kit:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "hero-app:build"
           },

@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './service/in-memory-data.service';
+import { InMemoryImageService }  from './service/in-memory-image.service';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -25,11 +26,12 @@ import { TimerComponent } from './publicCom/timer/timer.component';
 import { FunComponent } from './fun/fun.component';
 import { ColorpickerComponent } from './publicCom/colorpicker/colorpicker.component';
 
-// import { XpGhostModule } from '@hyland/experience';
-// import { TranslateModule } from '@ngx-translate/core';
-// import { XpTranslateModule } from '@hyland/experience';
 
-// import { XpViewerModule } from '@hyland/experience';
+// import { XpGhostModule } from '@hyland/experience';
+import { TranslateModule } from '@ngx-translate/core';
+import { XpTranslateModule } from '@hyland/experience';
+
+import { XpViewerModule } from '@hyland/experience';
 import { ExperienceComponent } from './experience/experience.component';
 
 @NgModule({
@@ -56,15 +58,18 @@ import { ExperienceComponent } from './experience/experience.component';
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
-    // XpViewerModule,
-    // TranslateModule,
-    // XpTranslateModule,
+    XpViewerModule,
+    TranslateModule,
+    XpTranslateModule.forRoot(), 
     // XpGhostModule,
         // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
+    ),
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryImageService, { dataEncapsulation: false }
     )
   ],
   providers: [],

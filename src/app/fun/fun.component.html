@@ -1,6 +1,6 @@
   <div class="row">
 
-    <div class="col-md-4 col-sm-6">
+    <div class="col-md-6 col-lg-4">
         <div class="card" style="width: 18rem;">
             <div class="clockwrap">
               <button class="btn btn-info" (click)="timer.stop()" data-toggle="tooltip" data-placement="top" title="local variable control">stop</button>
@@ -21,7 +21,7 @@
           </div>
     </div>
 
-    <div class="col-md-4 col-sm-6 ">
+    <div class="col-md-6 col-lg-4 ">
         <div class="card" style="width: 18rem;">
             <div class="clockwrap2" [style.background-color]="color">
               <div class="clock">
@@ -37,7 +37,7 @@
     </div>
 
     <!-- animation -->
-      <div class="col-md-4 col-sm-6 ">
+      <div class="col-md-6 col-lg-4 ">
         <div class="card" style="width: 18rem;">
             <div class="clockwrap2">
               <div class="clock" [@changeColor]="state" (mouseenter)="OnChangeClr('clr1')" (mouseleave)="OnChangeClr('clr2')">
@@ -45,8 +45,44 @@
             </div>
             <div class="card-body">
               <h5 class="card-title">Timmer</h5>
-              <p class="card-text">Parent interacts with child via <strong>service</strong> </p>
+              <p class="card-text"><br>animation <strong>transition</strong></p>
               <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 ">
+        <div class="card" style="width: 18rem;">
+            <div class="circlewrap">
+              <div class="circlecell" *ngFor="let circle of circles; let i=index" data-id="{{i}}" (click)="OnShow(i)">
+                <div class="circle" [@show] *ngIf="circle"></div>
+              </div>
+            </div>
+            <div class="clockwrap2">
+              <div class="clock" [@wildCard]="wildCardState" (mouseenter)="OnChangewildState()" (mouseleave)="OnChangewildState()">
+              </div> 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Timmer</h5>
+              <p class="card-text">Animation <strong>WildCard</strong> </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+
+    <div class="col-md-6 col-lg-4 ">
+        <div class="card" style="width: 18rem;">
+            <div class="circlewrap">
+              <div class="circlecell" *ngFor="let item of items; let i=index" [@show] (click)="onDelete(i)" ></div>
+            </div>
+            <div class="clockwrap2">
+              <div class="clock">
+              </div> 
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Animation</h5>
+              <p class="card-text">Animation <strong>WildCard</strong> </p>
+              <button (click)="onAddItem()" class="btn btn-primary">add item</button>
             </div>
           </div>
     </div>
