@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Function, FunctionExpression } from 'estree';
 
 @Component({
   selector: 'app-timer',

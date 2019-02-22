@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { NgModule } from '@angular/core';
@@ -25,10 +26,10 @@ import { FunComponent } from './fun/fun.component';
 import { ColorpickerComponent } from './publicCom/colorpicker/colorpicker.component';
 
 // import { XpGhostModule } from '@hyland/experience';
-import { TranslateModule } from '@ngx-translate/core';
-import { XpTranslateModule } from '@hyland/experience';
+// import { TranslateModule } from '@ngx-translate/core';
+// import { XpTranslateModule } from '@hyland/experience';
 
-import { XpViewerModule } from '@hyland/experience';
+// import { XpViewerModule } from '@hyland/experience';
 import { ExperienceComponent } from './experience/experience.component';
 
 @NgModule({
@@ -49,14 +50,15 @@ import { ExperienceComponent } from './experience/experience.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     // platformBrowserDynamic,
     FormsModule,
     NgbModule,
     AppRoutingModule,
     HttpClientModule,
-    XpViewerModule,
-    TranslateModule,
-    XpTranslateModule,
+    // XpViewerModule,
+    // TranslateModule,
+    // XpTranslateModule,
     // XpGhostModule,
         // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
