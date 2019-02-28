@@ -4,12 +4,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './service/in-memory-data.service';
-import { InMemoryImageService }  from './service/in-memory-image.service';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
@@ -17,6 +16,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroMessageComponent } from './hero-message/hero-message.component';
 
 import { AppRoutingModule } from './modules/app-routing.module';
+import { AppMaterialModule } from './modules/app-material.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ButtonComponent } from './publicCom/button/button.component';
 import { ChildComponent } from './heroes/child/child.component';
@@ -33,6 +33,12 @@ import { XpTranslateModule } from '@hyland/experience';
 
 import { XpViewerModule } from '@hyland/experience';
 import { ExperienceComponent } from './experience/experience.component';
+import { MaterialComponent } from './material/material.component';
+import { MaterialFormComponent } from './publicCom/material-form/material-form.component';
+import { MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule } from '@angular/material';
+import { ScrollComponent } from './publicCom/scroll/scroll.component';
+import { CustomScrollComponent } from './publicCom/custom-scroll/custom-scroll.component';
+import { ScrollpgComponent } from './scrollpg/scrollpg.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +54,12 @@ import { ExperienceComponent } from './experience/experience.component';
     FunComponent,
     TimerComponent,
     ColorpickerComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    MaterialComponent,
+    MaterialFormComponent,
+    ScrollComponent,
+    CustomScrollComponent,
+    ScrollpgComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +71,7 @@ import { ExperienceComponent } from './experience/experience.component';
     HttpClientModule,
     XpViewerModule,
     TranslateModule,
+    AppMaterialModule,
     XpTranslateModule.forRoot(), 
     // XpGhostModule,
         // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
@@ -67,10 +79,7 @@ import { ExperienceComponent } from './experience/experience.component';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    ),
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryImageService, { dataEncapsulation: false }
-    )
+    ), MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule, ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

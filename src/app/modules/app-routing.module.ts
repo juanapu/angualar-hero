@@ -6,6 +6,8 @@ import { HeroesComponent } from '../heroes/heroes.component';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 import { FunComponent } from '../fun/fun.component';
 import { ExperienceComponent } from '../experience/experience.component';
+import { MaterialComponent } from '../material/material.component';
+import { ScrollpgComponent } from '../scrollpg/scrollpg.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -13,7 +15,9 @@ const routes: Routes = [
     { path: 'detail/:id', component: HeroDetailComponent },
     { path: 'heroes', component: HeroesComponent },
     { path: 'fun', component: FunComponent },
-    { path: 'experience', component: ExperienceComponent}
+    { path: 'material', component: MaterialComponent },
+    { path: 'experience', component: ExperienceComponent},
+    { path: 'scroll', component: ScrollpgComponent}
 ];
 
 @NgModule({

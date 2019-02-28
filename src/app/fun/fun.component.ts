@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { TimerComponent } from '../publicCom/timer/timer.component';
 import { ColorService } from '../service/color.service'; 
 import { Subject,Observable } from 'rxjs';
@@ -103,7 +103,7 @@ import {
   templateUrl: './fun.component.html',
   styleUrls: ['./fun.component.scss']
 })
-export class FunComponent implements OnInit {
+export class FunComponent implements OnInit,OnDestroy {
   
   circles:(boolean)[] = [];
   items:number[]=[];
@@ -123,6 +123,11 @@ export class FunComponent implements OnInit {
       for(let i =0;i<16;i++){
         this.circles.push(false);
       };
+  }
+
+  ngOnDestroy(){
+      this.onStop();
+    console.log('---- destroy fun component ---')
   }
 
   onStop(){

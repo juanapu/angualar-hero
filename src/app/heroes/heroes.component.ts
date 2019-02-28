@@ -4,13 +4,15 @@ AfterViewInit, AfterViewChecked } from '@angular/core';
 import { Hero } from '../class/hero';
 import { HeroService } from '../service/hero.service';
 import { HtmlParser } from '@angular/compiler';
+import { Subscription } from 'rxjs';
 // import { ButtonComponent } from '../publicCom/button/button.component';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.scss']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, OnDestroy, AfterContentChecked,
+AfterViewInit, AfterViewChecked {
 
   trackByHeroes(index: number, hero: Hero): number { return hero.id; };
 
@@ -35,11 +37,13 @@ export class HeroesComponent implements OnInit {
    selectedHero: Hero;
    innerHtml: string = '<div class="text-danger">insert innerHTML by property binding [innerHTML] =&quot;value&quot;</div>';
 
+   subscription: Subscription;
+
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
     console.log('&&&&& ng init &&&&&')
-    this.heroService.getHeroes()
+    this.subscription= this.heroService.getHeroes()
       .subscribe(val=>{ 
         this.heroes=val;
         console.log(this.heroes);
@@ -51,7 +55,6 @@ export class HeroesComponent implements OnInit {
   }
 
   ngDoCheck() {
-    console.log('*** ngDoCheck *****')
   }
 
   ngAfterContentInit(){
@@ -71,11 +74,9 @@ export class HeroesComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    console.log('----- ngOnDestroy -----')
-  }
-
-
-
+    console.log('----- ngOnDestroy -----');
+    this.subscription.unsubscribe();
+  } 
 
   onSelect(slc: Hero){
     this.selectedHero=slc;
