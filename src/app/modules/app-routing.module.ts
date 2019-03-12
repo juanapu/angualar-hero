@@ -8,7 +8,7 @@ import { FunComponent } from '../fun/fun.component';
 import { ExperienceComponent } from '../experience/experience.component';
 import { MaterialComponent } from '../material/material.component';
 import { ScrollpgComponent } from '../scrollpg/scrollpg.component';
-
+import { GameconvertComponent } from '../gameconvert/gameconvert.component';
 const routes: Routes = [
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
@@ -16,12 +16,13 @@ const routes: Routes = [
     { path: 'heroes', component: HeroesComponent },
     { path: 'fun', component: FunComponent },
     { path: 'material', component: MaterialComponent },
-    { path: 'experience', component: ExperienceComponent},
-    { path: 'scroll', component: ScrollpgComponent}
+    { path: 'experience', component: ExperienceComponent },
+    { path: 'scroll', component: ScrollpgComponent },
+    { path: 'gameconvert', component: GameconvertComponent },
 ];
 
 @NgModule({
-    imports: [ RouterModule.forRoot(routes) ],
-    exports: [ RouterModule ]
-  })
-  export class AppRoutingModule {}
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }

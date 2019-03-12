@@ -1,90 +1,91 @@
-  <div class="row">
+<div class="row">
 
-    <div class="col-md-6 col-lg-4">
-        <div class="card" style="width: 18rem;">
-            <div class="clockwrap">
-              <button class="btn btn-info" (click)="timer.stop()" data-toggle="tooltip" data-placement="top" title="local variable control">stop</button>
-              <div class="clock">
-                <app-timer #timer></app-timer>
-              </div> 
-              <button class="btn btn-info" (click)="timer.count()" data-toggle="tooltip" data-placement="top" title="local variable control">count</button>
-            </div>
-            <div class="buttonwrap">
-                <button class="btn btn-info" (click)="onStop()" data-toggle="tooltip" data-placement="top" title="viewChild control">stop</button>
-                <button class="btn btn-info" (click)="onCount()" data-toggle="tooltip" data-placement="top" title="viewChild control">count</button>
-              </div>
-            <div class="card-body">
-              <h5 class="card-title">Timmer</h5>
-              <p class="card-text">Parent interacts with child via <strong>localvariable</strong><strong> viewChild</strong> </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
+  <div class="col-md-6 col-lg-4">
+    <div class="card" style="width: 18rem;">
+      <div class="clockwrap">
+        <button class="btn btn-info" (click)="timer.stop()" data-toggle="tooltip" data-placement="top" title="local variable control">stop</button>
+        <div class="clock">
+          <app-timer #timer></app-timer>
+        </div>
+        <button class="btn btn-info" (click)="timer.count()" data-toggle="tooltip" data-placement="top" title="local variable control">count</button>
+      </div>
+      <div class="buttonwrap">
+        <button class="btn btn-info" (click)="onStop()" data-toggle="tooltip" data-placement="top" title="viewChild control">stop</button>
+        <button class="btn btn-info" (click)="onCount()" data-toggle="tooltip" data-placement="top" title="viewChild control">count</button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title" [highlight]="color">Timmer</h5>
+        <p class="card-text">Parent interacts with child via <strong>localvariable</strong><strong> viewChild</strong>
+        </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
     </div>
-
-    <div class="col-md-6 col-lg-4 ">
-        <div class="card" style="width: 18rem;">
-            <div class="clockwrap2" [style.background-color]="color">
-              <div class="clock">
-                <app-colorpicker></app-colorpicker>
-              </div> 
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Timmer</h5>
-              <p class="card-text">Parent interacts with child via <strong>service</strong> </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-    </div>
-
-    <!-- animation -->
-      <div class="col-md-6 col-lg-4 ">
-        <div class="card" style="width: 18rem;">
-            <div class="clockwrap2">
-              <div class="clock" [@changeColor]="state" (mouseenter)="OnChangeClr('clr1')" (mouseleave)="OnChangeClr('clr2')">
-              </div> 
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Timmer</h5>
-              <p class="card-text"><br>animation <strong>transition</strong></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-    </div>
-
-    <div class="col-md-6 col-lg-4 ">
-        <div class="card" style="width: 18rem;">
-            <div class="circlewrap">
-              <div class="circlecell" *ngFor="let circle of circles; let i=index" data-id="{{i}}" (click)="OnShow(i)">
-                <div class="circle" [@show] *ngIf="circle"></div>
-              </div>
-            </div>
-            <div class="clockwrap2">
-              <div class="clock" [@wildCard]="wildCardState" (mouseenter)="OnChangewildState()" (mouseleave)="OnChangewildState()">
-              </div> 
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Timmer</h5>
-              <p class="card-text">Animation <strong>WildCard</strong> </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-    </div>
-
-    <div class="col-md-6 col-lg-4 ">
-        <div class="card" style="width: 18rem;">
-            <div class="circlewrap">
-              <div class="circlecell" *ngFor="let item of items; let i=index" [@show] (click)="onDelete(i)" ></div>
-            </div>
-            <div class="clockwrap2">
-              <div class="clock">
-              </div> 
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Animation</h5>
-              <p class="card-text">Animation <strong>WildCard</strong> </p>
-              <button (click)="onAddItem()" class="btn btn-primary">add item</button>
-            </div>
-          </div>
-    </div>
-
   </div>
+
+  <div class="col-md-6 col-lg-4 ">
+    <div class="card" style="width: 18rem;">
+      <div class="clockwrap2" [style.background-color]="color">
+        <div class="clock">
+          <app-colorpicker></app-colorpicker>
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Timmer</h5>
+        <p class="card-text">Parent interacts with child via <strong>service</strong> </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- animation -->
+  <div class="col-md-6 col-lg-4 ">
+    <div class="card" style="width: 18rem;">
+      <div class="clockwrap2">
+        <div class="clock" [@changeColor]="state" (mouseenter)="OnChangeClr('clr1')" (mouseleave)="OnChangeClr('clr2')">
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Timmer</h5>
+        <p class="card-text"><br>animation <strong>transition</strong></p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4 ">
+    <div class="card" style="width: 18rem;">
+      <div class="circlewrap">
+        <div class="circlecell" *ngFor="let circle of circles; let i=index; trackBy: trackFun;" data-id="{{i}}" (click)="OnShow(i)">
+          <div class="circle" [@show] *ngIf="circle"></div>
+        </div>
+      </div>
+      <div class="clockwrap2">
+        <div class="clock" [@wildCard]="wildCardState" (mouseenter)="OnChangewildState()" (mouseleave)="OnChangewildState()">
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Timmer</h5>
+        <p class="card-text">Animation <strong>WildCard</strong> </p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4 ">
+    <div class="card" style="width: 18rem;">
+      <div class="circlewrap">
+        <div class="circlecell" *ngFor="let item of items; let i=index;" [@show] (click)="onDelete(i)"></div>
+      </div>
+      <div class="clockwrap2">
+        <div class="clock">
+        </div>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Animation</h5>
+        <p class="card-text">Animation <strong>WildCard</strong> </p>
+        <button (click)="onAddItem()" class="btn btn-primary">add item</button>
+      </div>
+    </div>
+  </div>
+
+</div>
