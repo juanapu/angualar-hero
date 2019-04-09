@@ -1,4 +1,4 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-pickoption-com',
@@ -10,11 +10,20 @@ export class PickoptionComComponent implements OnInit {
   @Input()
   option: object;
 
+  @Output()
+  changeOption: EventEmitter<string> = new EventEmitter();
+
   bgclr: string;
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
+  onChangeOption(val) {
+    this.bgclr = val;
+    const optionval = val.split(' ').slice(0, -2).join(' ').trim();
+    this.changeOption.emit(optionval);
+  }
 }

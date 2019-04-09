@@ -1,5 +1,7 @@
-import { Component, OnInit, OnChanges, DoCheck, AfterContentInit, OnDestroy, AfterContentChecked,
-AfterViewInit, AfterViewChecked } from '@angular/core';
+import {
+  Component, OnInit, OnChanges, DoCheck, AfterContentInit, OnDestroy, AfterContentChecked,
+  AfterViewInit, AfterViewChecked
+} from '@angular/core';
 
 import { Hero } from '../class/hero';
 import { HeroService } from '../service/hero.service';
@@ -12,40 +14,40 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, OnDestroy, AfterContentChecked,
-AfterViewInit, AfterViewChecked {
+  AfterViewInit, AfterViewChecked {
 
   trackByHeroes(index: number, hero: Hero): number { return hero.id; };
 
-   hero: Hero = {
-   	 id: 1,
-   	 name: 'windostorm',
-     img: ''
-   };
+  hero: Hero = {
+    id: 1,
+    img: '',
+    name: 'windostorm',
+  };
 
-   option: Object = {
-    value: 'happy'
-   }
+  option: Object = {
+    value: 'happy',
+  }
 
-   clickedBtn: boolean = false;
+  clickedBtn: boolean = false;
 
-   twowaybinding: string = 'twowaybinding';
-   twowaybindingChild: string = 'twowaybindingChild';
-   onewaybinding: string = 'onewaybinding simulates twowaybinding';
-   onewaybindChild: string = 'one way bind child';
+  twowaybinding: string = 'twowaybinding';
+  twowaybindingChild: string = 'twowaybindingChild';
+  onewaybinding: string = 'onewaybinding simulates twowaybinding';
+  onewaybindChild: string = 'one way bind child';
 
-   heroes: Hero[];
-   selectedHero: Hero;
-   innerHtml: string = '<div class="text-danger">insert innerHTML by property binding [innerHTML] =&quot;value&quot;</div>';
+  heroes: Hero[];
+  selectedHero: Hero;
+  innerHtml: string = '<div class="text-danger">insert innerHTML by property binding [innerHTML] =&quot;value&quot;</div>';
 
-   subscription: Subscription;
+  subscription: Subscription;
 
   constructor(private heroService: HeroService) { }
 
   ngOnInit() {
     console.log('&&&&& ng init &&&&&')
-    this.subscription= this.heroService.getHeroes()
-      .subscribe(val=>{ 
-        this.heroes=val;
+    this.subscription = this.heroService.getHeroes()
+      .subscribe(val => {
+        this.heroes = val;
         console.log(this.heroes);
       });
   }
@@ -57,37 +59,43 @@ AfterViewInit, AfterViewChecked {
   ngDoCheck() {
   }
 
-  ngAfterContentInit(){
+  ngAfterContentInit() {
     console.log(' ----- ngAfterContentInit ----')
   }
 
-  ngAfterContentChecked(){
+  ngAfterContentChecked() {
     console.log('**** ngAfterContentChecked ***')
   }
 
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     console.log(' ---- ngAfterViewInit -----')
   }
 
-  ngAfterViewChecked(){
+  ngAfterViewChecked() {
     console.log('*** ngAfterViewChecked *****')
   }
 
   ngOnDestroy() {
     console.log('----- ngOnDestroy -----');
     this.subscription.unsubscribe();
-  } 
-
-  onSelect(slc: Hero){
-    this.selectedHero=slc;
   }
-  onGetbtnevent(event){
-    if(event){
+
+  onSelect(slc: Hero) {
+    this.selectedHero = slc;
+  }
+  onGetbtnevent(event) {
+    if (event) {
       this.clickedBtn = !this.clickedBtn;
     }
   }
-  changeOnewaybindChild(val){
+  changeOnewaybindChild(val) {
     this.onewaybindChild = val;
+  }
+  onChangeOption(val) {
+    this.option = {
+      ...this.option,
+      value: val,
+    };
   }
 
 }

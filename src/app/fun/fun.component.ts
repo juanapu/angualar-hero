@@ -155,7 +155,6 @@ export class FunComponent implements OnInit, OnDestroy {
     }
 
     trackFun(index, item) {
-        console.log(`index ${index}, item: ${item}`)
         return item.id;
     }
 }

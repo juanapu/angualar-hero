@@ -1,0 +1,3 @@
+<cdk-virtual-scroll-viewport itemSize="50" class="tbnl-viewport">
+  <div *cdkVirtualFor="let item of dataSource" class="tbnl-item">{{item || 'Loading...'}}</div>
+</cdk-virtual-scroll-viewport>

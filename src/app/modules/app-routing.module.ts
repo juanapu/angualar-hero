@@ -9,8 +9,9 @@ import { ExperienceComponent } from '../experience/experience.component';
 import { MaterialComponent } from '../material/material.component';
 import { ScrollpgComponent } from '../scrollpg/scrollpg.component';
 import { GameconvertComponent } from '../gameconvert/gameconvert.component';
+
 const routes: Routes = [
-    { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+    { path: '', redirectTo: '/material', pathMatch: 'full' },
     { path: 'dashboard', component: DashboardComponent },
     { path: 'detail/:id', component: HeroDetailComponent },
     { path: 'heroes', component: HeroesComponent },

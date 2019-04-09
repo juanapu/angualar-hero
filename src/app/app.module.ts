@@ -37,6 +37,8 @@ import { FruitComponent } from './gameconvert/littlefish/fruit/fruit.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { XpTranslateModule } from '@hyland/experience';
 
+import { ThumbnailModule } from './thumbnailsandbox/thumbnail.module';
+
 import { XpViewerModule } from '@hyland/experience';
 import { ExperienceComponent } from './experience/experience.component';
 import { MaterialComponent } from './material/material.component';
@@ -48,6 +50,8 @@ import { ScrollpgComponent } from './scrollpg/scrollpg.component';
 
 import { highlightDirective } from './directives/hightlight.directives';
 import { GameconvertComponent } from './gameconvert/gameconvert.component';
+import { ThumbnailsandboxComponent } from './thumbnailsandbox/thumbnailsandbox.component';
+import { ThumbnailComponent } from './thumbnailsandbox/thumbnail/thumbnail.component';
 
 
 @NgModule({
@@ -75,7 +79,7 @@ import { GameconvertComponent } from './gameconvert/gameconvert.component';
     LittlefishComponent,
     AneComponent,
     SingleaneComponent,
-    FruitComponent
+    FruitComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +92,7 @@ import { GameconvertComponent } from './gameconvert/gameconvert.component';
     XpViewerModule,
     TranslateModule,
     AppMaterialModule,
+    ThumbnailModule,
     XpTranslateModule.forRoot(),
     // XpGhostModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests

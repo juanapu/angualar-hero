@@ -3,68 +3,67 @@
 		<h2>{{hero.name}}</h2>
 	</div>
 	<div class="row">
-	   <div class="col-sm-4">
-		   <div class="list-group">
-				<a class="list-group-item mr-3" *ngFor="let hero of heroes;trackBy: trackByHeroes" routerLink="/detail/{{hero.id}}" [ngClass]="hero.id%2===0?'bg-light text-dark':'bg-secondary text-white'">
-						<span class="badge">{{hero.id}}</span>{{hero.name}}
-						<div class="imgwrap">
-							<img [src]="hero.img" class="mr-3 profile" alt="hero img">
-						</div>
+		<div class="col-sm-4">
+			<div class="list-group">
+				<a class="list-group-item mr-3" *ngFor="let hero of heroes;trackBy: trackByHeroes" routerLink="/detail/{{hero.id}}"
+				 [ngClass]="hero.id%2===0?'bg-light text-dark':'bg-secondary text-white'">
+					<span class="badge">{{hero.id}}</span>{{hero.name}}
+					<div class="imgwrap">
+						<img [src]="hero.img" class="mr-3 profile" alt="hero img">
+					</div>
 				</a>
 			</div>
-	   </div>
-	   <div class="col-sm-4">
-		   <div class="row">
+		</div>
+		<div class="col-sm-4">
+			<div class="row">
 				<h3>{{'event bind uppercase pipe' | uppercase}}</h3>
-		   </div>
+			</div>
 			<div class="row">
 				<app-button class="m-3" (clickbtn)="onGetbtnevent($event)"></app-button>
 				<div class="row m-3">
-						<div class="card" *ngIf="clickedBtn">
-							<div class="card-body">
-								Cliked the Child Button and get Button event emit successfullly!
-							</div>
+					<div class="card" *ngIf="clickedBtn">
+						<div class="card-body">
+							Cliked the Child Button and get Button event emit successfullly!
 						</div>
+					</div>
 				</div>
 			</div>
 
 			<div class="row">
-					here is directive binding<br>
-					<code>&lt;div (myClick)="clicked=$event" clickable>click me &lt;/div&gt;</code>
+				here is directive binding<br>
+				<code>&lt;div (myClick)="clicked=$event" clickable>click me &lt;/div&gt;</code>
 			</div>
 
 			<!-- two way bindings -->
 			<div class="row mt-3">
 				<div class="input-group mb-3">
-						<input [(ngModel)]="twowaybinding" placeholder="twowaybinding" type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
-						<div class="input-group-append">
-							<button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-						</div>
+					<input [(ngModel)]="twowaybinding" placeholder="twowaybinding" type="text" class="form-control" aria-label="Recipient's username"
+					 aria-describedby="button-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+					</div>
 				</div>
 				<p>{{twowaybinding}}</p>
 			</div>
 
 			<!-- two way binding and transfer data between child and parent  -->
 			<div class="row mt-3">
-					<p>two way bindings and transfer data between child and parent</p>
-					<div class="input-group mb-3">
-						<input 
-						[(ngModel)]="twowaybindingChild"
-						type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
-						<div class="input-group-append">
-							<button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-						</div>
+				<p>two way bindings and transfer data between child and parent</p>
+				<div class="input-group mb-3">
+					<input [(ngModel)]="twowaybindingChild" type="text" class="form-control" aria-label="Recipient's username"
+					 aria-describedby="button-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
 					</div>
-					<app-twowaybindchild [twowaybindingChild]="twowaybindingChild"></app-twowaybindchild>
+				</div>
+				<app-twowaybindchild [twowaybindingChild]="twowaybindingChild"></app-twowaybindchild>
 			</div>
 
 			<!-- oneway binding simulates two way binding -->
 			<div class="row mt-3">
 				<div class="input-group mb-3">
-					<input 
-					[value]="onewaybinding" placeholder="onewaybinding" 
-					(input)="onewaybinding=$event.target.value"
-					type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
+					<input [value]="onewaybinding" placeholder="onewaybinding" (input)="onewaybinding=$event.target.value" type="text"
+					 class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
 					<div class="input-group-append">
 						<button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
 					</div>
@@ -74,40 +73,38 @@
 
 			<!-- one way bindings simulates two way binding and transfer data between child and parent -->
 			<div class="row mt-3">
-					<p>one way bindings simulates two way binding and transfer data between child and parent</p>
-					<div class="input-group mb-3">
-						<input 
-						[value]="onewaybindChild" placeholder="onewaybindChild" 
-						(input)="onewaybindChild=$event.target.value"
-						type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
-						<div class="input-group-append">
-							<button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-						</div>
+				<p>one way bindings simulates two way binding and transfer data between child and parent</p>
+				<div class="input-group mb-3">
+					<input [value]="onewaybindChild" placeholder="onewaybindChild" (input)="onewaybindChild=$event.target.value" type="text"
+					 class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
 					</div>
-					<app-child [onewaybindChild]="onewaybindChild" (emitOnewaybindChild)="changeOnewaybindChild($event)"></app-child>
+				</div>
+				<app-child [onewaybindChild]="onewaybindChild" (emitOnewaybindChild)="changeOnewaybindChild($event)"></app-child>
 			</div>
 
 			<div class="row mt-3" [innerHTML]="innerHtml">
 			</div>
 
-	   </div>
-	   <div class="col-sm-4">
-		   <h3>{{'Public Components' | uppercase}}</h3>
-		   <div class="card">
-				<div class="card-body">
-				  pick up a single option component<br>
-				 {{'Functions:'| uppercase}}'
-				  <ul>
-					  <li>can add any custom content in</li>
-					  <li>can pick up a single option and return selected option value back</li>
-				  </ul>
-				  <hr>
-				  <app-pickoption-com [option]="option">
-					  <div>
-						  test
-					  </div>
-				  </app-pickoption-com>
-				</div>
-			  </div>
 		</div>
-</div>
+		<div class="col-sm-4">
+			<h3>{{'Public Components' | uppercase}}</h3>
+			<div class="card">
+				<div class="card-body">
+					pick up a single option component<br>
+					{{'Functions:'| uppercase}}'
+					<ul>
+						<li>can add any custom content in</li>
+						<li>can pick up a single option and return selected option value back</li>
+					</ul>
+					<hr>
+					<app-pickoption-com (changeOption)="onChangeOption($event)" [option]="option">
+						<div>
+							I feel happy<span style="font-size: 5rem">&#9786;</span>
+						</div>
+					</app-pickoption-com>
+				</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,14 @@
+<div class="sandbox-wrapper">
+  <div class="sandbox-content">
+      <cdk-virtual-scroll-viewport itemSize="700" class="sandbox-viewport">
+          <div *cdkVirtualFor="let item of items" class="sandbox-item">
+              <div class="item-content">
+                {{item}}
+              </div>
+          </div>
+        </cdk-virtual-scroll-viewport>        
+  </div>
+  <div class="thumbnail-wrapper">
+    <app-thumbnail></app-thumbnail>
+  </div>  
+</div>
