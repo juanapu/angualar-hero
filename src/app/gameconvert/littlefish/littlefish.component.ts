@@ -33,7 +33,7 @@ export class LittlefishComponent implements OnInit {
 
 
   init(){
-  	 this.drawService.can1 = this.can1 = this.elementRef.nativeElement.querySelector('#canvas1'); //fish, scrore, dust
+  	 this.drawService.can1 = this.can1 = this.elementRef.nativeElement.querySelector('#canvas1'); //fish, score, dust
 	 this.drawService.can2 = this.can2 = this.elementRef.nativeElement.querySelector('#canvas2'); //background, fruit, grass
      this.drawService.ctx1 = this.ctx1 = this.can1.getContext('2d');
      this.drawService.ctx2 = this.ctx2 = this.can2.getContext('2d');

@@ -52,6 +52,7 @@ import { highlightDirective } from './directives/hightlight.directives';
 import { GameconvertComponent } from './gameconvert/gameconvert.component';
 import { ThumbnailsandboxComponent } from './thumbnailsandbox/thumbnailsandbox.component';
 import { ThumbnailComponent } from './thumbnailsandbox/thumbnail/thumbnail.component';
+import { MomfishComponent } from './gameconvert/littlefish/momfish/momfish.component';
 
 
 @NgModule({
@@ -80,6 +81,7 @@ import { ThumbnailComponent } from './thumbnailsandbox/thumbnail/thumbnail.compo
     AneComponent,
     SingleaneComponent,
     FruitComponent,
+    MomfishComponent,
   ],
   imports: [
     BrowserModule,

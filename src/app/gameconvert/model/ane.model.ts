@@ -8,7 +8,7 @@ export interface Ane {
 	aneAlpha: number;
 }
 
-interface Point{
+interface Point {
 	x: number;
 	y: number;
 }
