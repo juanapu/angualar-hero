@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {CollectionViewer, DataSource} from '@angular/cdk/collections';
-import { TbnlDataSource } from './tbnl-datasource';
+import { Component, OnInit, Input } from '@angular/core';
+import { PageData } from './tbnl-model';
 
 @Component({
   selector: 'app-thumbnail',
@@ -8,9 +7,19 @@ import { TbnlDataSource } from './tbnl-datasource';
   styleUrls: ['./thumbnail.component.scss']
 })
 export class ThumbnailComponent implements OnInit {
-  dataSource = new TbnlDataSource();
 
-  constructor() { }
+  private _data = [];
+
+  @Input()
+  get data(): PageData[] {
+    return this._data;
+  }
+  set data(value) {
+    this._data = value;
+  }
+
+  constructor() {
+   }
 
   ngOnInit() {
   }

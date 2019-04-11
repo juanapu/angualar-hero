@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
+import { PageData } from './thumbnail/tbnl-model';
+
 @Component({
   selector: 'app-thumbnailsandbox',
   templateUrl: './thumbnailsandbox.component.html',
@@ -8,9 +10,19 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class ThumbnailsandboxComponent implements OnInit {
 
-  items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
+  items = Array.from({length: 100}).map((_, i) => `Item #${i}`);
 
-  constructor() { }
+  readonly _data: PageData[];
+
+  constructor() {
+    this._data = this.items.map((item, index) => {
+      return {
+        id: index,
+        meta: { des: item },
+        content: item,
+      };
+    });
+  }
 
   ngOnInit() {
   }
