@@ -10,7 +10,7 @@ import { PageData } from './thumbnail/tbnl-model';
 })
 export class ThumbnailsandboxComponent implements OnInit {
 
-  items = Array.from({length: 100}).map((_, i) => `Item #${i}`);
+  items = Array.from({length: 100}).map((_, i) => 'assets/documents/1_1.png');
 
   readonly _data: PageData[];
 

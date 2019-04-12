@@ -6,6 +6,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  img {
+    width: 100%;
+    max-height: 100%;
+  }
+  span{
+    position: absolute;
+    right: 50%;
+    bottom: 0px;
+  }
 }
 
 .sandbox-wrapper{
@@ -32,14 +42,4 @@
 .thumbnail-wrapper{
   width: 200px;
   height: 600px;
-}
-
-.tbnl-viewport{
-  height: 100%;
-  width: 100px;
-  border: 1px solid #f3f3f3;
-}
-
-.tbnl-item {
-  height: 50px;
 }
