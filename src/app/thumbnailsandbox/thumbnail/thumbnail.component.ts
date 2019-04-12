@@ -18,6 +18,8 @@ export class ThumbnailComponent implements OnInit {
     this._data = value;
   }
 
+  @Input() isOn: boolean;
+
   constructor() {
    }
 

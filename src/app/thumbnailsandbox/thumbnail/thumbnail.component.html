@@ -1,14 +1,16 @@
-<cdk-virtual-scroll-viewport itemSize="50" class="tbnl-viewport">
-  <div class="tbnl-viewport-title">
-    Pages
-  </div>
-  <div *cdkVirtualFor="let item of data" class="tbnl-item">
-    <div class="tbnl-item-content">
-      <!-- {{item.content}} -->
-      <img [src]="item.content" />
-    </div>
-    <div class="tbnl-item-page">
-      {{item.id}}
-    </div>
-  </div>
-</cdk-virtual-scroll-viewport>
+<ng-container *ngIf = "isOn">
+    <cdk-virtual-scroll-viewport itemSize="50" class="tbnl-viewport">
+        <div class="tbnl-viewport-title">
+          Pages
+        </div>
+        <div *cdkVirtualFor="let item of data" class="tbnl-item">
+          <div class="tbnl-item-content">
+            <!-- {{item.content}} -->
+            <img [src]="item.content" />
+          </div>
+          <div class="tbnl-item-page">
+            {{item.id}}
+          </div>
+        </div>
+      </cdk-virtual-scroll-viewport>
+</ng-container>

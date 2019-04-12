@@ -1,3 +1,5 @@
+import { CommonModule } from '@angular/common';  
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatCheckboxModule,  } from '@angular/material';
@@ -19,6 +21,8 @@ const routes: Routes = [
     MatButtonModule,
     MatCheckboxModule,
     ScrollingModule,
+    CommonModule,
+    BrowserModule,
     RouterModule.forRoot(routes),
    ],
   providers: [],
