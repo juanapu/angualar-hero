@@ -26,30 +26,32 @@ export class ExperienceComponent implements OnInit, OnDestroy{
   ngOnInit() {
   }
 
-  // myDatasource?: XpDatasource;
+//   myDatasource?: XpDatasource;
 
-  // constructor(private http: HttpClient) { }
-
-  // ngOnInit() {
-  //   this.http.get(
-  //     `http://localhost:4200/assets/Sample.png`,
-  //     { responseType: 'blob' },
-  //   ).pipe(
-  //     map(blob => ({
-  //       pageId: '1',
-  //       type: 'image/png',
-  //       blob,
-  //     })),
-  //   ).subscribe(val => { 
-  //     console.log(val)
-  //     console.log('here ---')
-  //   });
+//   constructor(private http: HttpClient) {
     
-  //   this.myDatasource = new SampleDatasource(this.http, '1');
-  // }
+//   }
+
+//   ngOnInit() {
+//     // this.http.get(
+//     //   `assets/Sample.png`,
+//     //   { responseType: 'blob' },
+//     // ).pipe(
+//     //   map(blob => ({
+//     //     pageId: '1',
+//     //     type: 'image/png',
+//     //     blob,
+//     //   })),
+//     // ).subscribe(val => { 
+//     //   console.log(val)
+//     //   console.log('here ---')
+//     // });
+    
+//     this.myDatasource = new SampleDatasource(this.http, '1');
+//   }
 
   ngOnDestroy(){
-    // this.myDatasource.getPage$().subscribe().unsubscribe();
+//     // this.myDatasource.getPage$().subscribe().unsubscribe();
   }
 
 }
@@ -67,8 +69,7 @@ export class ExperienceComponent implements OnInit, OnDestroy{
 //   };
 
 //   getPage$(pageId: string): Observable<XpPageDataModel> {
-//     return this.http.get(
-//       `assets/documents/${this.documentId}_${pageId}.png`,
+//     return this.http.get(`assets/documents/1_1.png`,
 //       { responseType: 'blob' },
 //     ).pipe(
 //       map(blob => ({

@@ -102,7 +102,8 @@ import { MomfishComponent } from './gameconvert/littlefish/momfish/momfish.compo
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
-    ), MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule, ReactiveFormsModule
+    ),
+    MatInputModule, MatButtonModule, MatSelectModule, MatRadioModule, MatCardModule, ReactiveFormsModule
   ],
   providers: [DrawService],
   bootstrap: [AppComponent]
